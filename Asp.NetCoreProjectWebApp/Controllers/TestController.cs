@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
-using Asp.NetCoreProjectWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Asp.NetCoreProjectWebApp.Models;
 
 namespace Asp.NetCoreProjectWebApp.Controllers;
 
-public class TestController:Controller
+public class TestController : Controller
 {
     private readonly ILogger<TestController> _logger;
 
@@ -14,6 +14,11 @@ public class TestController:Controller
     }
 
     public IActionResult Index()
+    {
+        return View();
+    }
+
+    public IActionResult Privacy()
     {
         return View();
     }

@@ -8,4 +8,9 @@
 
 
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Test\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Test\Privacy.cshtml" />
+    </ItemGroup>
+
 </Project>

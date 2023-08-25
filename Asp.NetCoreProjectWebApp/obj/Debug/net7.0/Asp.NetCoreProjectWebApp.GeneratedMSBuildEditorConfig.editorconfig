@@ -16,14 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\ZLenovo\Asoftware\Asp.NetCoreProjectWebApp\Asp.NetCoreProjectWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -34,6 +26,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Test/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/_ViewImports.cshtml]
