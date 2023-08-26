@@ -4,11 +4,11 @@ using Asp.NetCoreProjectWebApp.Models;
 
 namespace Asp.NetCoreProjectWebApp.Controllers;
 
-public class TestController : Controller
+public class HomeController : Controller
 {
-    private readonly ILogger<TestController> _logger;
+    private readonly ILogger<HomeController> _logger;
 
-    public TestController(ILogger<TestController> logger)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
