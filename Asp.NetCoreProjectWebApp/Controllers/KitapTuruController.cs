@@ -17,6 +17,6 @@ public class KitapTuruController : Controller
     public IActionResult Index()
     {
         List<KitapTuru> objKitapTuruList = _uygulamaDbContext.KitapTurleri.ToList();
-        return View();
+        return View(objKitapTuruList);
     }
 }
