@@ -24,4 +24,11 @@ public class KitapTuruController : Controller
     {
         return View();
     }
+    [HttpPost]
+    public IActionResult Ekle(KitapTuru kitapTuru)
+    {
+        _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
+        _uygulamaDbContext.SaveChanges();
+        return RedirectToAction("Index", "KitapTuru");
+    }
 }
