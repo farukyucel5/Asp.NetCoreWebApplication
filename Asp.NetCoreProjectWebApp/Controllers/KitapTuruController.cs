@@ -12,7 +12,7 @@ public class KitapTuruController : Controller
     {
         _uygulamaDbContext = context;
     }
-    
+
     // GET
     public IActionResult Index()
     {
@@ -24,18 +24,22 @@ public class KitapTuruController : Controller
     {
         return View();
     }
+
     [HttpPost]
     public IActionResult Ekle(KitapTuru kitapTuru)
     {
-        if (ModelState.IsValid)
-        {
-            _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
-            _uygulamaDbContext.SaveChanges();
-            return RedirectToAction("Index", "KitapTuru");
-        }
+        _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
+        _uygulamaDbContext.SaveChanges();
+        return RedirectToAction("Index", "KitapTuru");
+       
+        //The code block down below is a backend side validation
+        //if (ModelState.IsValid)
+        //{
+        //    _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
+        //    _uygulamaDbContext.SaveChanges();
+        //    return RedirectToAction("Index", "KitapTuru");
+        //}
 
-        return View();
-
-
+        // return View();
     }
 }
