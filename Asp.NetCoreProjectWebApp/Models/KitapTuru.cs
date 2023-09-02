@@ -8,7 +8,7 @@ public class KitapTuru
     [Key]  //primary key
     public int Id { get; set; }
     
-    [Required] //not null
+    [Required(ErrorMessage = "Kitap Türü Adı boş bırakılamaz!!")] //not null
     [MaxLength(25)]
     [DisplayName("Kitap Türü Adı")]
     public string Ad { get; set; }
