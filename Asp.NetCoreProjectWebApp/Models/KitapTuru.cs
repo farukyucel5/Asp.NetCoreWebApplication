@@ -9,6 +9,7 @@ public class KitapTuru
     public int Id { get; set; }
     
     [Required] //not null
+    [MaxLength(25)]
     [DisplayName("Kitap Türü Adı")]
     public string Ad { get; set; }
     
