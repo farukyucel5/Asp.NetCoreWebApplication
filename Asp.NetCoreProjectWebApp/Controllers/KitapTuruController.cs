@@ -28,18 +28,40 @@ public class KitapTuruController : Controller
     [HttpPost]
     public IActionResult Ekle(KitapTuru kitapTuru)
     {
-        _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
-        _uygulamaDbContext.SaveChanges();
-        return RedirectToAction("Index", "KitapTuru");
+        //The code block down below is a backend side validation
+        if (ModelState.IsValid)
+        {
+            _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
+            _uygulamaDbContext.SaveChanges();
+            return RedirectToAction("Index", "KitapTuru");
+        }
+
+        return View();
+    }
+
+    public IActionResult Update(int? id)
+    {
+        if (id == null || id == 0)
+            return NotFound();
+        KitapTuru? kitapTuruVt = _uygulamaDbContext.KitapTurleri.Find(id);
+        if (kitapTuruVt == null)
+            return NotFound();
+
+        return View(kitapTuruVt);
+    }
+    
+    [HttpPost]
+    public IActionResult Update(KitapTuru kitapTuru)
+    {
        
         //The code block down below is a backend side validation
-        //if (ModelState.IsValid)
-        //{
-        //    _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
-        //    _uygulamaDbContext.SaveChanges();
-        //    return RedirectToAction("Index", "KitapTuru");
-        //}
+        if (ModelState.IsValid)
+        {
+            _uygulamaDbContext.KitapTurleri.Update(kitapTuru);
+            _uygulamaDbContext.SaveChanges();
+            return RedirectToAction("Index", "KitapTuru");
+        }
 
-        // return View();
+        return View();
     }
 }
