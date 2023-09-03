@@ -33,6 +33,7 @@ public class KitapTuruController : Controller
         {
             _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
             _uygulamaDbContext.SaveChanges();
+            TempData["Success"] = "A new genre has been added successfully";
             return RedirectToAction("Index", "KitapTuru");
         }
 
@@ -59,6 +60,7 @@ public class KitapTuruController : Controller
         {
             _uygulamaDbContext.KitapTurleri.Update(kitapTuru);
             _uygulamaDbContext.SaveChanges();
+            TempData["Success"] = "updated successfully";
             return RedirectToAction("Index", "KitapTuru");
         }
 
@@ -85,6 +87,7 @@ public class KitapTuruController : Controller
         {
             _uygulamaDbContext.KitapTurleri.Remove(kitapTuru);
             _uygulamaDbContext.SaveChanges();
+            TempData["Success"] = "deleted successfully";
             return RedirectToAction("Index", "KitapTuru");
         }
 
