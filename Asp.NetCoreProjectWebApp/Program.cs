@@ -1,3 +1,4 @@
+using Asp.NetCoreProjectWebApp.Models;
 using Asp.NetCoreProjectWebApp.Utility;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,6 +10,7 @@ builder.Services.AddDbContext<UygulamaDbContext>(options =>
 {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+builder.Services.AddScoped<IKitapTuruRepository, KitapTuruRepository>();
 
 var app = builder.Build();
 

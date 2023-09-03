@@ -1,22 +1,21 @@
 ﻿using Asp.NetCoreProjectWebApp.Models;
-using Asp.NetCoreProjectWebApp.Utility;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Asp.NetCoreProjectWebApp.Controllers;
 
 public class KitapTuruController : Controller
 {
-    private readonly UygulamaDbContext _uygulamaDbContext;
+    private readonly IKitapTuruRepository _kitapTuruRepository;
 
-    public KitapTuruController(UygulamaDbContext context)
+    public KitapTuruController(IKitapTuruRepository context)
     {
-        _uygulamaDbContext = context;
+        _kitapTuruRepository = context;
     }
 
     // GET
     public IActionResult Index()
     {
-        List<KitapTuru> objKitapTuruList = _uygulamaDbContext.KitapTurleri.ToList();
+        List<KitapTuru> objKitapTuruList = _kitapTuruRepository.GetAll().ToList();
         return View(objKitapTuruList);
     }
 
@@ -31,8 +30,8 @@ public class KitapTuruController : Controller
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            _uygulamaDbContext.KitapTurleri.Add(kitapTuru);
-            _uygulamaDbContext.SaveChanges();
+            _kitapTuruRepository.Add(kitapTuru);
+            _kitapTuruRepository.Save();
             TempData["Success"] = "A new genre has been added successfully";
             return RedirectToAction("Index", "KitapTuru");
         }
@@ -44,7 +43,7 @@ public class KitapTuruController : Controller
     {
         if (id == null || id == 0)
             return NotFound();
-        KitapTuru? kitapTuruVt = _uygulamaDbContext.KitapTurleri.Find(id);
+        KitapTuru? kitapTuruVt = _kitapTuruRepository.Get(u => u.Id == id);
         if (kitapTuruVt == null)
             return NotFound();
 
@@ -58,8 +57,8 @@ public class KitapTuruController : Controller
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            _uygulamaDbContext.KitapTurleri.Update(kitapTuru);
-            _uygulamaDbContext.SaveChanges();
+           _kitapTuruRepository.Update(kitapTuru);
+           _kitapTuruRepository.Save();
             TempData["Success"] = "updated successfully";
             return RedirectToAction("Index", "KitapTuru");
         }
@@ -71,7 +70,7 @@ public class KitapTuruController : Controller
     {
         if (id == null || id == 0)
             return NotFound();
-        KitapTuru? kitapTuruVt = _uygulamaDbContext.KitapTurleri.Find(id);
+        KitapTuru? kitapTuruVt = _kitapTuruRepository.Get(u => u.Id == id);
         if (kitapTuruVt == null)
             return NotFound();
 
@@ -85,8 +84,8 @@ public class KitapTuruController : Controller
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            _uygulamaDbContext.KitapTurleri.Remove(kitapTuru);
-            _uygulamaDbContext.SaveChanges();
+            _kitapTuruRepository.Remove(kitapTuru);
+            _kitapTuruRepository.Save();
             TempData["Success"] = "deleted successfully";
             return RedirectToAction("Index", "KitapTuru");
         }

@@ -2,10 +2,10 @@
 
 namespace Asp.NetCoreProjectWebApp.Models;
 
-public class KitapTuruRepositoryRepository : Repository<KitapTuru>,IKitapTuruRepository
+public class KitapTuruRepository : Repository<KitapTuru>,IKitapTuruRepository
 {
     private UygulamaDbContext _uygulamaDbContext;
-    public KitapTuruRepositoryRepository(UygulamaDbContext uygulamaDbContext) : base(uygulamaDbContext)
+    public KitapTuruRepository(UygulamaDbContext uygulamaDbContext) : base(uygulamaDbContext)
     {
         _uygulamaDbContext = uygulamaDbContext;
     }
