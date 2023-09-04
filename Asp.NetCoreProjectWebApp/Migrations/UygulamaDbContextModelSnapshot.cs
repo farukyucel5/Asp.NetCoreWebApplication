@@ -27,6 +27,10 @@ namespace Asp.NetCoreProjectWebApp.Migrations
                     b.Property<double>("Fiyat")
                         .HasColumnType("double");
 
+                    b.Property<string>("KitapAdi")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Tanim")
                         .IsRequired()
                         .HasColumnType("longtext");

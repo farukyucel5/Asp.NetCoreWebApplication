@@ -8,6 +8,8 @@ public class Kitap
     public int Id { get; set; }
     
     [Required]
+    public string KitapAdi { get; set; }
+    [Required]
     public string Tanim { get; set; }
     [Required]
     public string Yazar { get; set; }

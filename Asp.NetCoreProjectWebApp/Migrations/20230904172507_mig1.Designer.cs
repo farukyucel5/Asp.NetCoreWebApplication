@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreProjectWebApp.Migrations
 {
     [DbContext(typeof(UygulamaDbContext))]
-    [Migration("20230904170804_KitaplarTablosuEkle")]
-    partial class KitaplarTablosuEkle
+    [Migration("20230904172507_mig1")]
+    partial class mig1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,10 @@ namespace Asp.NetCoreProjectWebApp.Migrations
 
                     b.Property<double>("Fiyat")
                         .HasColumnType("double");
+
+                    b.Property<string>("KitapAdi")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Tanim")
                         .IsRequired()
