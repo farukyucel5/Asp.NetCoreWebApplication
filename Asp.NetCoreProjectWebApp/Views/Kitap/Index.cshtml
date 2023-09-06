@@ -1,0 +1,68 @@
+﻿@model List<Kitap>
+
+@if (TempData["Success"] != null)
+{
+    <h2 style="color: #550d0d;font-size:20px">@TempData["Success"]</h2>
+}
+<div class="container">
+    <div class="row pt-3 pb-4">
+        <div>
+            <h1>Books</h1>
+        </div>
+    </div>
+    
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+
+            <th>
+                Book 
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+            </th>
+            
+            <th>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (var kitap in Model)
+        {
+            <tr>
+                <td>@kitap.Id</td>
+                <td>@kitap.KitapAdi</td>
+                <td>@kitap.Tanim</td>
+                <td>@kitap.Yazar</td>
+                <td>@kitap.Fiyat</td>
+                <td>
+                    <a asp-controller="Kitap" asp-action="Update" asp-route-id="@kitap.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
+                </td>
+                <td>
+                    <a asp-controller="Kitap" asp-action="Delete" asp-route-id="@kitap.Id" type="button" class="btn btn-danger" style="width: 250px">Delete</a>
+                </td>
+            </tr>
+        }
+
+        </tbody>
+
+    </table>
+    
+    <div class="row pt-3 pb-2">
+        <div>
+            <a asp-controller="Kitap" asp-action="Ekle" class="btn btn-lg btn-primary" type="button">
+                Create a new book
+            </a>
+        </div>
+    </div>
+</div>
