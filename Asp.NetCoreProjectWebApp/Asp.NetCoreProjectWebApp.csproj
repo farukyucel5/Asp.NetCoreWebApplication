@@ -27,12 +27,6 @@
 
 
 
-    <ItemGroup>
-      <Folder Include="Migrations\" />
-    </ItemGroup>
-
-
-
 
     <ItemGroup>
       <AdditionalFiles Include="Views\Kitap\Delete.cshtml" />

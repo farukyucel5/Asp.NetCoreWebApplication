@@ -25,12 +25,14 @@
                 Description
             </th>
             <th>
-                Price
+                Author
             </th>
             <th>
+                Price
             </th>
             
             <th>
+                Genre
             </th>
         </tr>
         </thead>
@@ -45,6 +47,7 @@
                 <td>@kitap.Tanim</td>
                 <td>@kitap.Yazar</td>
                 <td>@kitap.Fiyat</td>
+                <td></td>
                 <td>
                     <a asp-controller="Kitap" asp-action="Update" asp-route-id="@kitap.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
                 </td>

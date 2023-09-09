@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreProjectWebApp.Migrations
 {
     [DbContext(typeof(UygulamaDbContext))]
-    [Migration("20230904172507_mig1")]
-    partial class mig1
+    [Migration("20230909174812_ResimUrlekleme")]
+    partial class ResimUrlekleme
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,6 +34,13 @@ namespace Asp.NetCoreProjectWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("KitapTuruId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ResimUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Tanim")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -43,6 +50,8 @@ namespace Asp.NetCoreProjectWebApp.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("KitapTuruId");
 
                     b.ToTable("Kitaplar");
                 });
@@ -61,6 +70,17 @@ namespace Asp.NetCoreProjectWebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("KitapTurleri");
+                });
+
+            modelBuilder.Entity("Asp.NetCoreProjectWebApp.Models.Kitap", b =>
+                {
+                    b.HasOne("Asp.NetCoreProjectWebApp.Models.KitapTuru", "KitapTuru")
+                        .WithMany()
+                        .HasForeignKey("KitapTuruId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("KitapTuru");
                 });
 #pragma warning restore 612, 618
         }

@@ -2,6 +2,7 @@
 using Asp.NetCoreProjectWebApp.Utility;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreProjectWebApp.Migrations
 {
     [DbContext(typeof(UygulamaDbContext))]
-    partial class UygulamaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230909173757_ForeignKeyEkleme")]
+    partial class ForeignKeyEkleme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,10 +36,6 @@ namespace Asp.NetCoreProjectWebApp.Migrations
 
                     b.Property<int>("KitapTuruId")
                         .HasColumnType("int");
-
-                    b.Property<string>("ResimUrl")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Tanim")
                         .IsRequired()
