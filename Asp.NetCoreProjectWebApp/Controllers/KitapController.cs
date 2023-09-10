@@ -1,15 +1,18 @@
 ﻿using Asp.NetCoreProjectWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Asp.NetCoreProjectWebApp.Controllers;
 
 public class KitapController : Controller
 {
     private readonly IKitapRepository _kitapRepository;
+    private readonly IKitapTuruRepository _kitapTuruRepository;
 
-    public KitapController(IKitapRepository context)
+    public KitapController(IKitapRepository context,IKitapTuruRepository kitapTuruRepository)
     {
         _kitapRepository = context;
+        _kitapTuruRepository = kitapTuruRepository;
     }
 
     // GET
@@ -21,6 +24,12 @@ public class KitapController : Controller
 
     public IActionResult Ekle()
     {
+        IEnumerable<SelectListItem> KitapTuruList = _kitapTuruRepository.GetAll().Select(k => new SelectListItem
+        {
+            Text = k.Ad,
+            Value = k.Id.ToString(),
+        });
+        ViewBag.KitapTuruList = KitapTuruList;
         return View();
     }
 

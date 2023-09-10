@@ -17,6 +17,11 @@
             <span asp-validation-for="Tanim" class="text-danger"></span>
         </div>
         <div class="mb-3">
+            <label asp-for="KitapTuruId" class="p-0"></label>
+            <select asp-for="KitapTuruId" asp-items="ViewBag.KitapTuruList" class="form-select"></select>
+            <span asp-validation-for="KitapTuruId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
             <label asp-for="Yazar" class="p-0"></label>
             <input asp-for="Yazar" class="form-control"/>
             <span asp-validation-for="Yazar" class="text-danger"></span>
