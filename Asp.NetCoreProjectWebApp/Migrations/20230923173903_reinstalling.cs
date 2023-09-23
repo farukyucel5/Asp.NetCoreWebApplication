@@ -6,7 +6,7 @@ using MySql.EntityFrameworkCore.Metadata;
 namespace Asp.NetCoreProjectWebApp.Migrations
 {
     /// <inheritdoc />
-    public partial class ForeignKeyEkleme : Migration
+    public partial class reinstalling : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,7 +38,8 @@ namespace Asp.NetCoreProjectWebApp.Migrations
                     Tanim = table.Column<string>(type: "longtext", nullable: false),
                     Yazar = table.Column<string>(type: "longtext", nullable: false),
                     Fiyat = table.Column<double>(type: "double", nullable: false),
-                    KitapTuruId = table.Column<int>(type: "int", nullable: false)
+                    KitapTuruId = table.Column<int>(type: "int", nullable: false),
+                    ResimUrl = table.Column<string>(type: "longtext", nullable: false)
                 },
                 constraints: table =>
                 {

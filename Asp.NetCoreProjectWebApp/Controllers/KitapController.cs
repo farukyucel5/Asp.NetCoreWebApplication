@@ -8,11 +8,13 @@ public class KitapController : Controller
 {
     private readonly IKitapRepository _kitapRepository;
     private readonly IKitapTuruRepository _kitapTuruRepository;
+    public readonly IWebHostEnvironment _webHostEnvironment;
 
-    public KitapController(IKitapRepository context,IKitapTuruRepository kitapTuruRepository)
+    public KitapController(IKitapRepository context,IKitapTuruRepository kitapTuruRepository, IWebHostEnvironment webHostEnvironment)
     {
         _kitapRepository = context;
         _kitapTuruRepository = kitapTuruRepository;
+        _webHostEnvironment = webHostEnvironment;
     }
 
     // GET
@@ -49,6 +51,13 @@ public class KitapController : Controller
     [HttpPost]
     public IActionResult EkleUpdate(Kitap kitap, IFormFile? file)
     {
+        string wwwRootPath = _webHostEnvironment.WebRootPath;
+        string kitapPath = Path.Combine(wwwRootPath, @"img");
+        using(var fileStream=new FileStream(Path.Combine(kitapPath, file.FileName), FileMode.Create))
+        {
+            file.CopyTo(fileStream);
+        }
+        kitap.ResimUrl = @"\img\" + file.FileName;
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreProjectWebApp.Migrations
 {
     [DbContext(typeof(UygulamaDbContext))]
-    [Migration("20230909174812_ResimUrlekleme")]
-    partial class ResimUrlekleme
+    [Migration("20230923173903_reinstalling")]
+    partial class reinstalling
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
