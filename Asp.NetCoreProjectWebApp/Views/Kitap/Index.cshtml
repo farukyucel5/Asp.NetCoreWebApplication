@@ -49,7 +49,7 @@
                 <td>@kitap.Fiyat</td>
                 <td></td>
                 <td>
-                    <a asp-controller="Kitap" asp-action="Update" asp-route-id="@kitap.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
+                    <a asp-controller="Kitap" asp-action="EkleUpdate" asp-route-id="@kitap.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
                 </td>
                 <td>
                     <a asp-controller="Kitap" asp-action="Delete" asp-route-id="@kitap.Id" type="button" class="btn btn-danger" style="width: 250px">Delete</a>
@@ -63,7 +63,7 @@
     
     <div class="row pt-3 pb-2">
         <div>
-            <a asp-controller="Kitap" asp-action="Ekle" class="btn btn-lg btn-primary" type="button">
+            <a asp-controller="Kitap" asp-action="EkleUpdate" class="btn btn-lg btn-primary" type="button">
                 Create a new book
             </a>
         </div>

@@ -30,9 +30,8 @@
 
     <ItemGroup>
       <AdditionalFiles Include="Views\Kitap\Delete.cshtml" />
-      <AdditionalFiles Include="Views\Kitap\Ekle.cshtml" />
+      <AdditionalFiles Include="Views\Kitap\EkleUpdate.cshtml" />
       <AdditionalFiles Include="Views\Kitap\Index.cshtml" />
-      <AdditionalFiles Include="Views\Kitap\Update.cshtml" />
     </ItemGroup>
 
 

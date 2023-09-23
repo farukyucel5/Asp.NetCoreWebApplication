@@ -1,9 +1,9 @@
 ﻿@model Kitap
 
-<form method="post">
+<form method="post" enctype ="multipart/form-data">
     <div class="border p-3 mt-5">
         <div class="row pb-3">
-            <h2 class="text-primary">Kitap Ekle</h2>
+            <h2 class="text-primary">@(Model==null ? "Add Books" : "Update Books")</h2>
         </div>
 
         <div class="mb-3">
@@ -31,8 +31,20 @@
             <input asp-for="Fiyat" class="form-control"/>
             <span asp-validation-for="Fiyat" class="text-danger"></span>
         </div>
+           <div class="mb-3">
+            <label asp-for="ResimUrl" class="p-0"></label>
+            <input type="file" class="form-control"/>
+        </div>
+        @if (Model == null)
+        {
+            <button type="submit" class="btn btn-lg btn-primary" style="width:250px">Kitap Ekle</button>
+        }
+        else
+        {
+            <button type="submit" class="btn btn-lg btn-primary" style="width:250px">Update</button>
+        }
+        
 
-        <button type="submit" class="btn btn-lg btn-primary" style="width:250px">Kitap Ekle</button>
         <a asp-controller="Kitap" asp-action="Index" class="btn btn-lg btn-primary" style="width:250px">
             Kitaplara Geri Dön
         </a>

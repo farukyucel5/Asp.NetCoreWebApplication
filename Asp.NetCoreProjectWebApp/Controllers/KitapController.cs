@@ -22,7 +22,7 @@ public class KitapController : Controller
         return View(objKitapList);
     }
 
-    public IActionResult Ekle()
+    public IActionResult EkleUpdate(int? id)
     {
         IEnumerable<SelectListItem> KitapTuruList = _kitapTuruRepository.GetAll().Select(k => new SelectListItem
         {
@@ -30,11 +30,24 @@ public class KitapController : Controller
             Value = k.Id.ToString(),
         });
         ViewBag.KitapTuruList = KitapTuruList;
-        return View();
+        if (id == null || id == 0)
+        {
+           
+            return View();
+        }
+        else
+        {
+            Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
+            if (kitapVt == null)
+                return NotFound();
+
+            return View(kitapVt);
+        }
+       
     }
 
     [HttpPost]
-    public IActionResult Ekle(Kitap kitap)
+    public IActionResult EkleUpdate(Kitap kitap, IFormFile? file)
     {
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
@@ -48,32 +61,32 @@ public class KitapController : Controller
         return View();
     }
 
-    public IActionResult Update(int? id)
-    {
-        if (id == null || id == 0)
-            return NotFound();
-        Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
-        if (kitapVt == null)
-            return NotFound();
+    //public IActionResult Update(int? id)
+    //{
+    //    if (id == null || id == 0)
+    //        return NotFound();
+    //    Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
+    //    if (kitapVt == null)
+    //        return NotFound();
 
-        return View(kitapVt);
-    }
+    //    return View(kitapVt);
+    //}
     
-    [HttpPost]
-    public IActionResult Update(Kitap kitap)
-    {
+    //[HttpPost]
+    //public IActionResult Update(Kitap kitap)
+    //{
        
-        //The code block down below is a backend side validation
-        if (ModelState.IsValid)
-        {
-           _kitapRepository.Update(kitap);
-           _kitapRepository.Save();
-            TempData["Success"] = "updated successfully";
-            return RedirectToAction("Index", "Kitap");
-        }
+    //    //The code block down below is a backend side validation
+    //    if (ModelState.IsValid)
+    //    {
+    //       _kitapRepository.Update(kitap);
+    //       _kitapRepository.Save();
+    //        TempData["Success"] = "updated successfully";
+    //        return RedirectToAction("Index", "Kitap");
+    //    }
 
-        return View();
-    }
+    //    return View();
+    //}
     
     public IActionResult Delete(int? id)
     {
