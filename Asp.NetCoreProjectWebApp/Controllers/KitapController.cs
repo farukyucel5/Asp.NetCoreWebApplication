@@ -69,33 +69,6 @@ public class KitapController : Controller
 
         return View();
     }
-
-    //public IActionResult Update(int? id)
-    //{
-    //    if (id == null || id == 0)
-    //        return NotFound();
-    //    Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
-    //    if (kitapVt == null)
-    //        return NotFound();
-
-    //    return View(kitapVt);
-    //}
-    
-    //[HttpPost]
-    //public IActionResult Update(Kitap kitap)
-    //{
-       
-    //    //The code block down below is a backend side validation
-    //    if (ModelState.IsValid)
-    //    {
-    //       _kitapRepository.Update(kitap);
-    //       _kitapRepository.Save();
-    //        TempData["Success"] = "updated successfully";
-    //        return RedirectToAction("Index", "Kitap");
-    //    }
-
-    //    return View();
-    //}
     
     public IActionResult Delete(int? id)
     {
