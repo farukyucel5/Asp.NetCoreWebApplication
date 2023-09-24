@@ -61,9 +61,19 @@ public class KitapController : Controller
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            _kitapRepository.Add(kitap);
+            if (kitap.Id == 0)
+            {
+                _kitapRepository.Add(kitap);
+                TempData["Success"] = "A new book has been added successfully";
+            }
+            else
+            {
+                _kitapRepository.Update(kitap);
+                TempData["Success"] = "The book has been updated successfully";
+            }
+            
             _kitapRepository.Save();
-            TempData["Success"] = "A new book has been added successfully";
+            
             return RedirectToAction("Index", "Kitap");
         }
 
