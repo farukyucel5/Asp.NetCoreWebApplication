@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\ZLenovo\\Asoftware\\Asp.NetCoreProjectWebApp\\Asp.NetCoreProjectWebApp\\wwwroot\\img\\Ekran Görüntüsü (4).png",
+      "PackagePath": "staticwebassets\\img\\Ekran Görüntüsü (4).png"
+    },
+    {
       "Id": "C:\\ZLenovo\\Asoftware\\Asp.NetCoreProjectWebApp\\Asp.NetCoreProjectWebApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

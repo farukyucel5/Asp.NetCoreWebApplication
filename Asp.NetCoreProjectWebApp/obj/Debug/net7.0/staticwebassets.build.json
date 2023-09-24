@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vJLavp8o+4dDCWTQY7qVIeXJrEcSewBacsICiORBUNM=",
+  "Hash": "8fR2NPomJBsdm1Qybj+fOv0nhPiOpVXCGYEwM9pXeSQ=",
   "Source": "Asp.NetCoreProjectWebApp",
   "BasePath": "_content/Asp.NetCoreProjectWebApp",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\ZLenovo\\Asoftware\\Asp.NetCoreProjectWebApp\\Asp.NetCoreProjectWebApp\\wwwroot\\img\\Ekran Görüntüsü (4).png",
+      "SourceId": "Asp.NetCoreProjectWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\ZLenovo\\Asoftware\\Asp.NetCoreProjectWebApp\\Asp.NetCoreProjectWebApp\\wwwroot\\",
+      "BasePath": "_content/Asp.NetCoreProjectWebApp",
+      "RelativePath": "img/Ekran Görüntüsü (4).png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\Ekran Görüntüsü (4).png"
     },
     {
       "Identity": "C:\\ZLenovo\\Asoftware\\Asp.NetCoreProjectWebApp\\Asp.NetCoreProjectWebApp\\wwwroot\\js\\site.js",
