@@ -1,6 +1,7 @@
 ﻿@model Kitap
 
 <form method="post" enctype ="multipart/form-data">
+    <input asp-for="ResimUrl" hidden />
     <div class="row">
         <div class="col-10">
             <div class="border p-3 mt-5">
@@ -46,7 +47,6 @@
                     <button type="submit" class="btn btn-lg btn-primary" style="width:250px">Update</button>
                 }
 
-
                 <a asp-controller="Kitap" asp-action="Index" class="btn btn-lg btn-primary" style="width:250px">
                     Kitaplara Geri Dön
                 </a>
@@ -54,12 +54,10 @@
         </div>
 
         <div class="col-2">
-
             @if (Model != null)
             {
                 <img src="@Model.ResimUrl" width="100%" style="border-radius:7px; border:1px solid #bbb9b9">
             }
-
         </div>
 
     </div>

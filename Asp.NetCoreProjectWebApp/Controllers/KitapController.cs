@@ -53,11 +53,15 @@ public class KitapController : Controller
     {
         string wwwRootPath = _webHostEnvironment.WebRootPath;
         string kitapPath = Path.Combine(wwwRootPath, @"img");
-        using(var fileStream=new FileStream(Path.Combine(kitapPath, file.FileName), FileMode.Create))
+       
+        if(file != null)
         {
-            file.CopyTo(fileStream);
+            using (var fileStream = new FileStream(Path.Combine(kitapPath, file.FileName), FileMode.Create))
+            {
+                file.CopyTo(fileStream);
+            }
+            kitap.ResimUrl = @"\img\" + file.FileName;
         }
-        kitap.ResimUrl = @"\img\" + file.FileName;
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
