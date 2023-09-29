@@ -13,16 +13,15 @@ public class Repository<T> : IRepository<T> where T :  class
     {
         _uygulamaDbContext = uygulamaDbContext;
          this.dbSet = _uygulamaDbContext.Set<T>();
-        _uygulamaDbContext.Kitaplar.Include(k => k.KitapTuru).Include(k => k.KitapTuruId);
+        _uygulamaDbContext.Kitaplar.Include(k => k.KitapTuru);
     }
     public IEnumerable<T> GetAll(string? includeProps=null)
     {
         IQueryable<T> query = dbSet;
-        if (!string.IsNullOrEmpty(includeProps))
+         if (!string.IsNullOrEmpty(includeProps))
         {
-            foreach (var prop in includeProps.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-            {
-                query = query.Include(prop);
+            foreach (var prop in includeProps.Split(new char[] { ','},StringSplitOptions.RemoveEmptyEntries)) {
+                query =query.Include(prop);
             }
         }
         return query.ToList();
