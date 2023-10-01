@@ -10,7 +10,7 @@ namespace Asp.NetCoreProjectWebApp.Models
         public int Id { get; set; }
 
         [Required]
-        public int ogrenciId { get; set; }
+        public int OgrenciId { get; set; }
 
         [ValidateNever]
         public int KitapId { get; set; }
