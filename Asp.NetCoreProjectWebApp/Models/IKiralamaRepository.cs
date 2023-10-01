@@ -1,7 +1,7 @@
 ﻿namespace Asp.NetCoreProjectWebApp.Models;
 
-public interface IKitapTuruRepository : IRepository<KitapTuru>
+public interface IKiralamaRepository : IRepository<Kiralama>
 {
-    void Update(KitapTuru kitapTuru);
+    void Update(Kiralama kiralama);
     void Save();
 }

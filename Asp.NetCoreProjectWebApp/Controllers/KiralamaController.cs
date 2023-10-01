@@ -4,34 +4,34 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Asp.NetCoreProjectWebApp.Controllers;
 
-public class KitapController : Controller
+public class KiralamaController : Controller
 {
+    private readonly IKiralamaRepository _kiralamaRepository;
     private readonly IKitapRepository _kitapRepository;
-    private readonly IKitapTuruRepository _kitapTuruRepository;
     public readonly IWebHostEnvironment _webHostEnvironment;
 
-    public KitapController(IKitapRepository context,IKitapTuruRepository kitapTuruRepository, IWebHostEnvironment webHostEnvironment)
+    public KiralamaController(IKiralamaRepository context,IKitapRepository kitapRepository, IWebHostEnvironment webHostEnvironment)
     {
-        _kitapRepository = context;
-        _kitapTuruRepository = kitapTuruRepository;
+        _kiralamaRepository = context;
+        _kitapRepository = kitapRepository;
         _webHostEnvironment = webHostEnvironment;
     }
 
     // GET
     public IActionResult Index()
     {
-        List<Kitap> objKitapList = _kitapRepository.GetAll(includeProps:"KitapTuru").ToList();
-        return View(objKitapList);
+        List<Kiralama> objKiralamaList = _kiralamaRepository.GetAll(includeProps:"Kitap").ToList();
+        return View(objKiralamaList);
     }
 
     public IActionResult EkleUpdate(int? id)
     {
-        IEnumerable<SelectListItem> KitapTuruList = _kitapTuruRepository.GetAll().Select(k => new SelectListItem
+        IEnumerable<SelectListItem> KitapList = _kitapRepository.GetAll().Select(k => new SelectListItem
         {
-            Text = k.Ad,
+            Text = k.KitapAdi,
             Value = k.Id.ToString(),
         });
-        ViewBag.KitapTuruList = KitapTuruList;
+        ViewBag.KitapList = KitapList;
         if (id == null || id == 0)
         {
            
@@ -39,46 +39,35 @@ public class KitapController : Controller
         }
         else
         {
-            Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
-            if (kitapVt == null)
+            Kiralama? kiralamaVt = _kiralamaRepository.Get(u => u.Id == id);
+            if (kiralamaVt == null)
                 return NotFound();
 
-            return View(kitapVt);
+            return View(kiralamaVt);
         }
        
     }
 
     [HttpPost]
-    public IActionResult EkleUpdate(Kitap kitap, IFormFile? file)
+    public IActionResult EkleUpdate(Kiralama kiralama)
     {
-        string wwwRootPath = _webHostEnvironment.WebRootPath;
-        string kitapPath = Path.Combine(wwwRootPath, @"img");
-       
-        if(file != null)
-        {
-            using (var fileStream = new FileStream(Path.Combine(kitapPath, file.FileName), FileMode.Create))
-            {
-                file.CopyTo(fileStream);
-            }
-            kitap.ResimUrl = @"\img\" + file.FileName;
-        }
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            if (kitap.Id == 0)
+            if (kiralama.Id == 0)
             {
-                _kitapRepository.Add(kitap);
-                TempData["Success"] = "A new book has been added successfully";
+                _kiralamaRepository.Add(kiralama);
+                TempData["Success"] = "The book has been rented successfully";
             }
             else
             {
-                _kitapRepository.Update(kitap);
-                TempData["Success"] = "The book has been updated successfully";
+                _kiralamaRepository.Update(kiralama);
+                TempData["Success"] = "Renting books state has been updated successfully";
             }
             
-            _kitapRepository.Save();
+            _kiralamaRepository.Save();
             
-            return RedirectToAction("Index", "Kitap");
+            return RedirectToAction("Index", "Kiralama");
         }
 
         return View();
@@ -88,24 +77,24 @@ public class KitapController : Controller
     {
         if (id == null || id == 0)
             return NotFound();
-        Kitap? kitapVt = _kitapRepository.Get(u => u.Id == id);
-        if (kitapVt == null)
+        Kiralama? kiralamaVt = _kiralamaRepository.Get(u => u.Id == id);
+        if (kiralamaVt == null)
             return NotFound();
 
-        return View(kitapVt);
+        return View(kiralamaVt);
     }
     
     [HttpPost]
-    public IActionResult Delete(Kitap kitap)
+    public IActionResult Delete(Kiralama kiralama)
     {
        
         //The code block down below is a backend side validation
         if (ModelState.IsValid)
         {
-            _kitapRepository.Remove(kitap);
-            _kitapRepository.Save();
+            _kiralamaRepository.Remove(kiralama);
+            _kiralamaRepository.Save();
             TempData["Success"] = "deleted successfully";
-            return RedirectToAction("Index", "Kitap");
+            return RedirectToAction("Index", "Kiralama");
         }
 
         return View();
