@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row pt-3 pb-4">
         <div>
-            <h1>Kiralananalar</h1>
+            <h1>Kiralamalar</h1>
         </div>
     </div>
     
@@ -20,8 +20,10 @@
 
             <th>
                 OgrenciId
-            </th>                         
-                KitapId
+            </th>
+          
+            <th>
+                    KitapId
             </th>
         </tr>
         </thead>
@@ -33,7 +35,7 @@
             <tr>
                 <td>@kiralama.Id</td>
                 <td>@kiralama.OgrenciId</td>
-                <td>@kiralama.Kitap.KitapAdı</td>
+                <td>@kiralama.Kitap.KitapAdi</td>
                 <td>
                     <a asp-controller="Kiralama" asp-action="EkleUpdate" asp-route-id="@kiralama.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
                 </td>
