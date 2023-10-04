@@ -6,12 +6,6 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Content Remove="Views\Kiralama\Delete.cshtml" />
-      <Content Remove="Views\Kiralama\EkleUpdate.cshtml" />
-      <Content Remove="Views\Kiralama\Index.cshtml" />
-    </ItemGroup>
-
 
 
     <ItemGroup>
@@ -35,9 +29,6 @@
 
 
     <ItemGroup>
-      <AdditionalFiles Include="Views\Kiralama\Delete.cshtml" />
-      <AdditionalFiles Include="Views\Kiralama\EkleUpdate.cshtml" />
-      <AdditionalFiles Include="Views\Kiralama\Index.cshtml" />
       <AdditionalFiles Include="Views\Kitap\Delete.cshtml" />
       <AdditionalFiles Include="Views\Kitap\EkleUpdate.cshtml" />
       <AdditionalFiles Include="Views\Kitap\Index.cshtml" />

@@ -16,18 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\ZLenovo\Asoftware\Asp.NetCoreProjectWebApp\Asp.NetCoreProjectWebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/EkleUpdate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = 
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kitap/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = 
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2l0YXBcRGVsZXRlLmNzaHRtbA==
@@ -52,6 +40,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/EkleUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcRWtsZVVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/KitapTuru/Delete.cshtml]
