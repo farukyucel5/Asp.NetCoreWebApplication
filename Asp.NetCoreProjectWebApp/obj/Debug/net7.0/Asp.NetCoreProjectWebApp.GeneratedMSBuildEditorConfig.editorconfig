@@ -42,16 +42,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/EkleUpdate.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcRWtsZVVwZGF0ZS5jc2h0bWw=
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/EkleGuncelle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcRWtsZUd1bmNlbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/Kiralama/Sil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2lyYWxhbWFcU2lsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/ZLenovo/Asoftware/Asp.NetCoreProjectWebApp/Asp.NetCoreProjectWebApp/Views/KitapTuru/Delete.cshtml]

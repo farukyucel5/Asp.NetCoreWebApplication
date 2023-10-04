@@ -1,59 +1,64 @@
 ﻿@model List<Kiralama>
 
-@if (TempData["Success"] != null)
+@if (TempData["basarili"] != null)
 {
-    <h2 style="color: #550d0d;font-size:20px">@TempData["Success"]</h2>
+			<h2 style="color:red">@TempData["basarili"]</h2>
 }
+
+
 <div class="container">
-    <div class="row pt-3 pb-4">
-        <div>
-            <h1>Kiralamalar</h1>
-        </div>
-    </div>
-    
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>
-                Id
-            </th>
 
-            <th>
-                OgrenciId
-            </th>
-          
-            <th>
-                    KitapId
-            </th>
-        </tr>
-        </thead>
+	<div class="row pt-3 pb-4"
+		<div>
+			<h1>Kitap Kiralamaları</h1>
+		</div>
+	</div>
 
-        <tbody>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>
+					Id
+				</th>
+				<th>
+					OgrenciId
+				</th>
+				<th>
+					KitapId
+				</th>		
 
-        @foreach (var kiralama in Model)
-        {
-            <tr>
-                <td>@kiralama.Id</td>
-                <td>@kiralama.OgrenciId</td>
-                <td>@kiralama.Kitap.KitapAdi</td>
-                <td>
-                    <a asp-controller="Kiralama" asp-action="EkleUpdate" asp-route-id="@kiralama.Id" type="button" class="btn btn-success" style="width:250px">Update</a>
-                </td>
-                <td>
-                    <a asp-controller="Kiralama" asp-action="Delete" asp-route-id="@kiralama.Id" type="button" class="btn btn-danger" style="width: 250px">Delete</a>
-                </td>
-            </tr>
-        }
+				<th>
+				</th>
+				<th>
+				</th>
+			</tr>
+		</thead>
 
-        </tbody>
+		<tbody>
+			@foreach(var kiralama in Model)
+			{
+				<tr>
+					<td>@kiralama.Id</td>
+					<td>@kiralama.OgrenciId</td>					
+					<td>@kiralama.Kitap.KitapAdi</td>
+					<td>
+							<a asp-controller="Kiralama" asp-action="EkleGuncelle" asp-route-id="@kiralama.Id" type="button" class="btn btn-success" style="width:250px">Güncelle</a>
+					</td>
+					<td>
+							<a asp-controller="Kiralama" asp-action="Sil" asp-route-id="@kiralama.Id" type="button" class="btn btn-danger" style="width:250px">Sil</a>						
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
 
-    </table>
-    
-    <div class="row pt-3 pb-2">
-        <div>
-            <a asp-controller="Kiralama" asp-action="EkleUpdate" class="btn btn-lg btn-primary" type="button">
-                Rent a new book
-            </a>
-        </div>
-    </div>
+	<div class="row pt-3 pb-2">
+		<div>
+			<a asp-controller="Kiralama" asp-action="EkleGuncelle" class="btn btn-lg btn-primary" type="button">
+				Yeni Kiralama Kaydı Oluştur
+			</a>
+		</div>
+	</div>
+
+
 </div>
