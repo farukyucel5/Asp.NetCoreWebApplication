@@ -75,7 +75,13 @@ public class KiralamaController : Controller
     
     public IActionResult Delete(int? id)
     {
-        if (id == null || id == 0)
+		IEnumerable<SelectListItem> KitapList = _kitapRepository.GetAll().Select(k => new SelectListItem
+		{
+			Text = k.KitapAdi,
+			Value = k.Id.ToString(),
+		});
+		ViewBag.KitapList = KitapList;
+		if (id == null || id == 0)
             return NotFound();
         Kiralama? kiralamaVt = _kiralamaRepository.Get(u => u.Id == id);
         if (kiralamaVt == null)

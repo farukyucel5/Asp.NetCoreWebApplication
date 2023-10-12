@@ -42,10 +42,10 @@
 					<td>@kiralama.OgrenciId</td>					
 					<td>@kiralama.Kitap.KitapAdi</td>
 					<td>
-							<a asp-controller="Kiralama" asp-action="EkleGuncelle" asp-route-id="@kiralama.Id" type="button" class="btn btn-success" style="width:250px">Güncelle</a>
+							<a asp-controller="Kiralama" asp-action="EkleUpdate" asp-route-id="@kiralama.Id" type="button" class="btn btn-success" style="width:250px">Güncelle</a>
 					</td>
 					<td>
-							<a asp-controller="Kiralama" asp-action="Sil" asp-route-id="@kiralama.Id" type="button" class="btn btn-danger" style="width:250px">Sil</a>						
+							<a asp-controller="Kiralama" asp-action="Delete" asp-route-id="@kiralama.Id" type="button" class="btn btn-danger" style="width:250px">Sil</a>						
 					</td>
 				</tr>
 			}
