@@ -1,6 +1,7 @@
 using Asp.NetCoreProjectWebApp.Models;
 using Asp.NetCoreProjectWebApp.Utility;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddDbContext<UygulamaDbContext>(options =>
 {
     options.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<UygulamaDbContext>();
 builder.Services.AddScoped<IKitapTuruRepository, KitapTuruRepository>();
 builder.Services.AddScoped<IKitapRepository, KitapRepository>();
 builder.Services.AddScoped<IKiralamaRepository, KiralamaRepository>();
