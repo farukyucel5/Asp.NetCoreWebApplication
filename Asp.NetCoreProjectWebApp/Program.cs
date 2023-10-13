@@ -13,6 +13,9 @@ builder.Services.AddDbContext<UygulamaDbContext>(options =>
 });
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<UygulamaDbContext>();
+builder.Services.AddRazorPages();
+
+
 builder.Services.AddScoped<IKitapTuruRepository, KitapTuruRepository>();
 builder.Services.AddScoped<IKitapRepository, KitapRepository>();
 builder.Services.AddScoped<IKiralamaRepository, KiralamaRepository>();
@@ -33,6 +36,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
