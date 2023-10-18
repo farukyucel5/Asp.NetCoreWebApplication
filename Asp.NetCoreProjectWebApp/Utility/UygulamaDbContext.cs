@@ -12,4 +12,6 @@ public class UygulamaDbContext:IdentityDbContext
     
     public DbSet<Kiralama> Kiralama { get; set;}
 
+    public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
 }
