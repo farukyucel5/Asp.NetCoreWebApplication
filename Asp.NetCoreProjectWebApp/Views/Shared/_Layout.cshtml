@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Asp.NetCoreProjectWebApp.Utility;
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -26,17 +27,21 @@
 							<a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
 						</li>
 
-						<li class="nav-item">
-							<a class="nav-link" asp-area="" asp-controller="KitapTuru" asp-action="Index">Book Genre</a>
-						</li>
+						@if(User.IsInRole(UserRoles.Role_Admin))
+						{
+							<li class="nav-item">
+								<a class="nav-link" asp-area="" asp-controller="KitapTuru" asp-action="Index">Book Genre</a>
+							</li>
 
-						<li class="nav-item">
-							<a class="nav-link" asp-area="" asp-controller="Kitap" asp-action="Index">Book</a>
-						</li>
+							<li class="nav-item">
+								<a class="nav-link" asp-area="" asp-controller="Kitap" asp-action="Index">Book</a>
+							</li>
 
-						<li class="nav-item">
-							<a class="nav-link" asp-area="" asp-controller="Kiralama" asp-action="Index">Rent Books</a>
-						</li>
+							<li class="nav-item">
+								<a class="nav-link" asp-area="" asp-controller="Kiralama" asp-action="Index">Rent Books</a>
+							</li>
+						}
+					
 
 					</ul>
 
