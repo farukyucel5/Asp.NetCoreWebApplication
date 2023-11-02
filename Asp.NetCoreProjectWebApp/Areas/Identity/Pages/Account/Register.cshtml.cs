@@ -98,10 +98,22 @@ namespace Asp.NetCoreProjectWebApp.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-        }
 
 
-        public async Task OnGetAsync(string returnUrl = null)
+			[Required]
+			public int Ogrencino { get; set; }
+
+			public string Adres { get; set; }
+
+			public string Fakülte { get; set; }
+
+			public string Bolum { get; set; }
+
+
+		}
+
+
+		public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -117,7 +129,12 @@ namespace Asp.NetCoreProjectWebApp.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                user.Ogrencino=Input.Ogrencino;
+                user.Adres=Input.Adres;
+                user.Fakülte = Input.Fakülte;
+                user.Bolum=Input.Bolum;
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
 
                 if (result.Succeeded)
                 {
